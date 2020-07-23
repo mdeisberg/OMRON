@@ -1,0 +1,29 @@
+import socket
+
+
+TCP_IP = '169.254.85.79'
+TCP_PORT = 5890
+BUFFER_SIZE = 20  # Normally 1024, but we want fast response
+
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((TCP_IP, TCP_PORT))
+s.listen(1)
+conn, addr = s.accept()
+print (f'Connection address: {addr}')
+
+t=2
+while 1:
+    data = conn.recv(BUFFER_SIZE)
+    if not data: break
+    print ("send data: " + str(data))
+    conn.send(data) # echo
+    conn.send(bytes("Welcome to server!", "utf-8"))
+    if t>=0:
+        t -= 1
+        conn.send(bytes("t", "utf-8"))
+        print (t)
+    if t<=0:
+        conn.send(bytes("A", "utf-8"))
+
+conn.close()
