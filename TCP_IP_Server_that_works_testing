@@ -15,6 +15,7 @@ print (f'Connection address: {addr}')
 #$TMSCT,20,1,float test=123.456,*3C
 #float[] pointP1 = {J1,J2,J3,J4,J5,J6}
 #PTP("JPP", pointP1, 3, 3, 1, true)
+#$TMSTA,2,00,*41
 
 t=2
 while 1:
