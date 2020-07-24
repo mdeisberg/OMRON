@@ -12,6 +12,8 @@ s.listen(1)
 conn, addr = s.accept()
 print (f'Connection address: {addr}')
 
+PTP("JPP", float[] jpoint = {J1,J2,J3,J4,J5,J6}), 3, 3, 1, true)
+
 t=2
 while 1:
     data = conn.recv(BUFFER_SIZE)
@@ -27,5 +29,3 @@ while 1:
         conn.send(bytes("A", "utf-8"))
 
 conn.close()
-
-PTP("JPP", float[] jpoint = {J1,J2,J3,J4,J5,J6}), 3, 3, 1, true)
