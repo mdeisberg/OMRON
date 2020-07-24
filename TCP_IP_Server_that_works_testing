@@ -27,3 +27,5 @@ while 1:
         conn.send(bytes("A", "utf-8"))
 
 conn.close()
+
+PTP("JPP", float[] jpoint = {J1,J2,J3,J4,J5,J6}), 3, 3, 1, true)
